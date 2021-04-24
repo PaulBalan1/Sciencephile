@@ -19,6 +19,7 @@ Must have:
 -	Blog posts containing the relevant YouTube video and the respective script in the form of text. 
 	That would require the use of layouts, activities, intents, fragments, RecyclerViews, local data storage and testing. 
 -	A way for me to create blog posts that would be consumed by all the instances of the app.
+-	Statistics of the channel displayed and updated in real-time.
 
 Should have: 
 -	Blog posts categorized by topic in different sections.
