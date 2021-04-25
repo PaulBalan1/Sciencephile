@@ -26,6 +26,7 @@ Should have:
 -	“Submit video idea” section which would send the text to a Google Docs Spreadsheet. 
 
 Could have: 
+-	Ability of making videos "favorite", and then viewing the respective list
 -	Automatic blog generation by fetching the data through the YouTube API.
 -	Quizzes on different topics to test the reader’s comprehension of the content.
 
