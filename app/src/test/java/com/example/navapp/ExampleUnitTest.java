@@ -1,4 +1,4 @@
-package com.example.sciencephile;
+package com.example.navapp;
 
 import org.junit.Test;
 
