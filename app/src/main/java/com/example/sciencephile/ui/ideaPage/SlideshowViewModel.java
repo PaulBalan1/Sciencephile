@@ -1,4 +1,4 @@
-package com.example.sciencephile.ui.slideshow;
+package com.example.sciencephile.ui.ideaPage;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.sciencephile.ui.home.HomeFragment"
+        android:name="com.example.sciencephile.ui.homePage.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.sciencephile.ui.gallery.GalleryFragment"
+        android:name="com.example.sciencephile.ui.videosPage.GalleryFragment"
         android:label="@string/menu_videos"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.sciencephile.ui.slideshow.SlideshowFragment"
+        android:name="com.example.sciencephile.ui.ideaPage.SlideshowFragment"
         android:label="@string/menu_idea"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

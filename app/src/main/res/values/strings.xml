@@ -6,6 +6,9 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
 
+    <string name="API_KEY_DATA">AIzaSyA9bIcrdTiVH0_UdB4efapWaw3Lq_tzh6Q</string>
+    <string name="channel_id">UC7BhHN8NyMMru2RUygnDXSg</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_videos">Videos</string>
     <string name="menu_idea">Submit idea</string>
