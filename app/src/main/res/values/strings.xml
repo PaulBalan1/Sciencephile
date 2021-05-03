@@ -9,6 +9,14 @@
     <string name="API_KEY_DATA">AIzaSyA9bIcrdTiVH0_UdB4efapWaw3Lq_tzh6Q</string>
     <string name="channel_id">UC7BhHN8NyMMru2RUygnDXSg</string>
 
+    <string name="tab_astronomy">Astronomy</string>
+    <string name="tab_physics">Physics</string>
+    <string name="tab_biology">Biology</string>
+
+    <string name="playlist_astronomy">PLO9-8MGgWFMJPuSTM7DlBmFEde_fhUa1I</string>
+    <string name="playlist_physics">PLO9-8MGgWFMJB2pN6NWo3FQfZUFp_I9au</string>
+    <string name="playlist_biology">PLO9-8MGgWFMLK6gYXyKjZhb63xu1S1Zy1</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_videos">Videos</string>
     <string name="menu_idea">Submit idea</string>
