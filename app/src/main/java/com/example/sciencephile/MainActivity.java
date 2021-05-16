@@ -1,9 +1,17 @@
 package com.example.sciencephile;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -11,6 +19,17 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 

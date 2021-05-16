@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel;
 public class HomeViewModel extends ViewModel {
 
     private MutableLiveData<String> channelName;
+    private MutableLiveData<String> channelDescription;
     private MutableLiveData<String> subscriberCount;
     private MutableLiveData<String> totalViews;
 
@@ -14,10 +15,15 @@ public class HomeViewModel extends ViewModel {
         channelName = new MutableLiveData<>();
         subscriberCount = new MutableLiveData<>();
         totalViews = new MutableLiveData<>();
+        channelDescription = new MutableLiveData<>();
     }
 
     public LiveData<String> getChannelName() {
         return channelName;
+    }
+
+    public LiveData<String> getChannelDescription() {
+        return channelDescription;
     }
 
     public LiveData<String> getSubscriberCount() {
@@ -30,6 +36,10 @@ public class HomeViewModel extends ViewModel {
 
     public void setChannelName(String text) {
         this.channelName.setValue(text);
+    }
+
+    public void setChannelDescription(String channelDescription) {
+        this.channelDescription.setValue(channelDescription);
     }
 
     public void setSubscriberCount(String text) {

@@ -1,45 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.homePage.HomeFragment">
 
-    <TextView
-        android:id="@+id/channelName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/subscriberCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/totalViews"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/channelName"
-        app:layout_constraintVertical_bias="0.39" />
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="230dp"
+            android:src="@drawable/channel_banner" />
 
-    <TextView
-        android:id="@+id/totalViews"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="152dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent" />
+        <LinearLayout
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_width="125dp"
+                android:layout_height="101dp"
+                android:src="@drawable/channel_icon" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/channelName"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:text="TextView"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/channelDescription"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="TextView"
+                    android:textSize="15dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_width="125dp"
+                android:layout_height="101dp"
+                android:src="@drawable/subscribers" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/subscriberText"
+                    android:layout_width="fill_parent"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:text="Number of SkyNet supporters:"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/subscriberCount"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="TextView"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="112dp"
+                android:layout_height="77dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/viewers" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/viewerText"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:text="Number of humans influenced:"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/totalViews"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:text="TextView"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/footer" />
+
+    </LinearLayout>
+
+</LinearLayout>
