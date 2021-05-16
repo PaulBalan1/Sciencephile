@@ -32,3 +32,22 @@ Could have:
 
 Won’t have:
 -	A log-in system, as no user-specific action is needed. 
+
+
+
+
+
+README FINAL UPDATE:
+
+In the process, i have realized that instead of me making blog posts, I would instead automatically generate them through the YouTube API whenever a new video 
+would get uploaded on the channel. Initially i wasn't sure if i'd be able to do it, but after researching it I found it feaseable so i chose to go with it.
+
+Final implemented requirements (sorted by importance):
+
+-	Automatic video-post (title, description, the video itself) generation by fetching the data through the YouTube API in real-time.
+-	Statistics of the channel displayed and updated in real-time.
+-	Blog posts categorized by topic in different sections.
+-	Ability of making videos "favorite", and then viewing the respective list, using a local file storage.
+-	Ability to share videos or open and watch them on YouTube instead.
+
+Used: Layouts, activities, intents, fragments, tabs, nav-menus, RecyclerViews, local data storage, Retrofit, Material Design, YouTube API libraries, etc... 
