@@ -1,4 +1,4 @@
-package com.example.sciencephile.ui.ideaPage;
+package com.example.sciencephile.ui.favoritesPage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -21,23 +21,20 @@ import com.example.sciencephile.R;
 import com.example.sciencephile.ServiceGenerator;
 import com.example.sciencephile.YouTubeAPI;
 import com.example.sciencephile.responses.ChannelDataResponse;
-import com.example.sciencephile.ui.videosPage.playlists.Adapter;
-import com.example.sciencephile.ui.videosPage.playlists.PlaylistViewModel;
-import com.example.sciencephile.ui.videosPage.playlists.RecyclerItemClickListener;
-import com.example.sciencephile.ui.videosPage.playlists.ThumbnailItem;
-import com.example.sciencephile.ui.videosPage.playlists.VideoPageActivity;
-import com.google.gson.JsonObject;
+import com.example.sciencephile.ui.videosPage.playlist.Adapter;
+import com.example.sciencephile.ui.videosPage.playlist.RecyclerItemClickListener;
+import com.example.sciencephile.ui.videosPage.playlist.ThumbnailItem;
+import com.example.sciencephile.ui.videosPage.playlist.VideoPageActivity;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SlideshowFragment extends Fragment {
+public class FavoritesFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private FavoritesViewModel favoritesViewModel;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -59,8 +56,8 @@ public class SlideshowFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+        favoritesViewModel =
+                new ViewModelProvider(this).get(FavoritesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_favorites, container, false);
         final TextView textView = root.findViewById(R.id.section_label2);
 
@@ -84,7 +81,7 @@ public class SlideshowFragment extends Fragment {
         );
 
 
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        favoritesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

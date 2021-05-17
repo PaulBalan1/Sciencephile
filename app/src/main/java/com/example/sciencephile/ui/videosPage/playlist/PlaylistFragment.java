@@ -1,4 +1,4 @@
-package com.example.sciencephile.ui.videosPage.playlists;
+package com.example.sciencephile.ui.videosPage.playlist;
 
 import android.content.Intent;
 import android.os.Bundle;

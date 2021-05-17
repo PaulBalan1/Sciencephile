@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
-public class GalleryViewModel extends ViewModel {
+public class VideoGalleryViewModel extends ViewModel {
 
     private MutableLiveData<Integer> mIndex = new MutableLiveData<>();
 
@@ -19,7 +19,7 @@ public class GalleryViewModel extends ViewModel {
         }
     });
 
-    public GalleryViewModel() {}
+    public VideoGalleryViewModel() {}
 
     public void setIndex(int index) {
         mIndex.setValue(index);

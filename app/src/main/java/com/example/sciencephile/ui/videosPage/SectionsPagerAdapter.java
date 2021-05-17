@@ -7,15 +7,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.sciencephile.R;
-import com.example.sciencephile.ui.videosPage.playlists.PlaylistFragment;
+import com.example.sciencephile.ui.videosPage.playlist.PlaylistFragment;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_astronomy, R.string.tab_physics, R.string.tab_biology};
-    private final GalleryFragment mContext;
+    private final VideoGalleryFragment mContext;
 
-    public SectionsPagerAdapter(GalleryFragment context, FragmentManager fm) {
+    public SectionsPagerAdapter(VideoGalleryFragment context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }

@@ -1,4 +1,4 @@
-package com.example.sciencephile.ui.videosPage.playlists;
+package com.example.sciencephile.ui.videosPage.playlist;
 
 import android.view.LayoutInflater;
 import android.view.View;

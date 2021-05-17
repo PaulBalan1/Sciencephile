@@ -1,14 +1,11 @@
-package com.example.sciencephile.ui.videosPage.playlists;
+package com.example.sciencephile.ui.videosPage.playlist;
 
-import android.app.Activity;
-import android.content.ClipData;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,17 +22,6 @@ import com.example.sciencephile.YouTubeAPI;
 import com.example.sciencephile.responses.ChannelDataResponse;
 import com.google.gson.JsonObject;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
