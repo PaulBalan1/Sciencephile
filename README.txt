@@ -9,26 +9,28 @@ Among the various sections, one could be a “Submit video idea”, where one co
 which would be stored in a Google Docs Spreadsheet, that only I would have access to. 
 
 
-YouTube link: https://www.youtube.com/channel/UC7BhHN8NyMMru2RUygnDXSg
+YouTube link to channel: https://www.youtube.com/channel/UC7BhHN8NyMMru2RUygnDXSg
+YouTube link to video demonstration: https://www.youtube.com/watch?v=dDs5N89xlD4
 
 
 
 MoSCoW requirements:
 
 Must have:
--	Blog posts containing the relevant YouTube video and the respective script in the form of text. 
+-	Video posts containing the relevant YouTube video and the respective script in the form of text. 
 	That would require the use of layouts, activities, intents, fragments, RecyclerViews, local data storage and testing. 
--	A way for me to create blog posts that would be consumed by all the instances of the app.
--	Statistics of the channel displayed and updated in real-time.
+	(Mostly completed)
+-	A way for me to create blog posts that would be consumed by all the instances of the app. (Replaced with another requirement)
+-	Statistics of the channel displayed and updated in real-time. (Completed)
 
 Should have: 
--	Blog posts categorized by topic in different sections.
--	“Submit video idea” section which would send the text to a Google Docs Spreadsheet. 
+-	Blog posts categorized by topic in different sections. (Completed)
+-	“Submit video idea” section which would send the text to a Google Docs Spreadsheet. (Not implemented)
 
 Could have: 
--	Ability of making videos "favorite", and then viewing the respective list
--	Automatic blog generation by fetching the data through the YouTube API.
--	Quizzes on different topics to test the reader’s comprehension of the content.
+-	Ability of making videos "favorite", and then viewing the respective list (Completed)
+-	Automatic blog generation by fetching the data through the YouTube API.	(Completed)
+-	Quizzes on different topics to test the reader’s comprehension of the content. (Not implemented)
 
 Won’t have:
 -	A log-in system, as no user-specific action is needed. 
