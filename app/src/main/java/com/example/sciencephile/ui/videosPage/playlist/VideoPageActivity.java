@@ -29,7 +29,7 @@ import retrofit2.Response;
 
 public class VideoPageActivity extends AppCompatActivity {
 
-    private TextView videoTitle, description;
+    private TextView videoTitle, description, testText;
     private YouTubePlayerView playerView;
     private Toolbar toolbar;
     private String videoURL;

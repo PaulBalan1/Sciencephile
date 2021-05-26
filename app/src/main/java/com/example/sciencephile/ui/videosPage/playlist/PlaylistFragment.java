@@ -1,11 +1,13 @@
 package com.example.sciencephile.ui.videosPage.playlist;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.sciencephile.FilePersistance;
 import com.example.sciencephile.R;
 import com.example.sciencephile.ServiceGenerator;
 import com.example.sciencephile.YouTubeAPI;
@@ -59,13 +62,14 @@ public class PlaylistFragment extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
+        playlistViewModel = new ViewModelProvider(this).get(PlaylistViewModel.class);
         View root = inflater.inflate(R.layout.playlist_page, container, false);
-
         recyclerView = root.findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(root.getContext());
         adapter = new Adapter(previews, this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+        playlistViewModel.getPreviews().observe(getViewLifecycleOwner(), s -> recyclerView.setAdapter(new Adapter(s, this)));
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
@@ -75,12 +79,10 @@ public class PlaylistFragment extends Fragment {
                     }
 
                     @Override public void onLongItemClick(View view, int position) {
-                        // MAYBE MARK AS FAVORITE -------------------------------------------------
+
                     }
                 })
         );
-
-        playlistViewModel.getPreviews().observe(getViewLifecycleOwner(), s -> recyclerView.setAdapter(adapter));
         return root;
     }
 
@@ -121,6 +123,9 @@ public class PlaylistFragment extends Fragment {
                                     videoIDs.add(videoID);
                                     videoTitles.add(title);
                                     previews.add(new ThumbnailItem(url, title));
+                                    playlistViewModel.setVideoTitles(videoTitles);
+                                    playlistViewModel.setVideoIDs(videoIDs);
+                                    playlistViewModel.setPreviews(previews);
                                 }
                             }
 
@@ -131,9 +136,6 @@ public class PlaylistFragment extends Fragment {
                         });
 
                     }
-                    playlistViewModel.setVideoTitles(videoTitles);
-                    playlistViewModel.setVideoIDs(videoIDs);
-                    playlistViewModel.setPreviews(previews);
                 }
             }
 

@@ -44,15 +44,14 @@
 
         <TextView
             android:id="@+id/description"
-            android:layout_width="359dp"
-            android:layout_height="339dp"
-            android:layout_marginTop="15dp"
+            android:layout_width="358dp"
+            android:layout_height="335dp"
+            android:layout_marginTop="84dp"
             android:text="TextView"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.53"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/player"
-            app:layout_constraintVertical_bias="0.062" />
+            app:layout_constraintTop_toBottomOf="@+id/player" />
 
         <Button
             android:id="@+id/share"

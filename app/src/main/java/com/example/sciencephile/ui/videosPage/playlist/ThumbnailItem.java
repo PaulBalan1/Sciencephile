@@ -16,4 +16,5 @@ public class ThumbnailItem {
     public String getThumbnailUrl() {
         return thumbnailUrl;
     }
+
 }

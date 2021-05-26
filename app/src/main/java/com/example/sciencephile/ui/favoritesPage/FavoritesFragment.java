@@ -25,6 +25,7 @@ import com.example.sciencephile.ui.videosPage.playlist.Adapter;
 import com.example.sciencephile.ui.videosPage.playlist.RecyclerItemClickListener;
 import com.example.sciencephile.ui.videosPage.playlist.ThumbnailItem;
 import com.example.sciencephile.ui.videosPage.playlist.VideoPageActivity;
+import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 
@@ -50,14 +51,14 @@ public class FavoritesFragment extends Fragment {
         videoIDs = new ArrayList<>();
         videoTitles = new ArrayList<>();
         previews = new ArrayList<>();
+        favoritesViewModel = new ViewModelProvider(this).get(FavoritesViewModel.class);
         loadFavoriteVideos();
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        favoritesViewModel =
-                new ViewModelProvider(this).get(FavoritesViewModel.class);
+        favoritesViewModel = new ViewModelProvider(this).get(FavoritesViewModel.class);
         View root = inflater.inflate(R.layout.fragment_favorites, container, false);
         final TextView textView = root.findViewById(R.id.section_label2);
 
@@ -65,7 +66,8 @@ public class FavoritesFragment extends Fragment {
         layoutManager = new LinearLayoutManager(root.getContext());
         adapter = new Adapter(previews, this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        favoritesViewModel.getPreviews().observe(getViewLifecycleOwner(), s -> recyclerView.setAdapter(new Adapter(s, this)));
+        //recyclerView.setAdapter(adapter);
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
@@ -80,13 +82,6 @@ public class FavoritesFragment extends Fragment {
                 })
         );
 
-
-        favoritesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
         return root;
     }
 
@@ -101,12 +96,20 @@ public class FavoritesFragment extends Fragment {
                 @Override
                 public void onResponse(Call<ChannelDataResponse> call, Response<ChannelDataResponse> response) {
                     if(response.code() == 200){
-                        //JsonObject video = response.body().getItems().get(0);
-                        //String title = video.get("snippet").getAsJsonObject().get("title").getAsString();
-                        //String url = video.get("snippet").getAsJsonObject().get("thumbnails").getAsJsonObject().get("default").getAsJsonObject().get("url").getAsString();
-                        videoIDs.add(videoID);
-                        //videoTitles.add(title);
-                       //previews.add(new ThumbnailItem(url, title));
+                        try {
+                            JsonObject video = response.body().getItems().get(0);
+                            String title = video.get("snippet").getAsJsonObject().get("title").getAsString();
+                            String url = video.get("snippet").getAsJsonObject().get("thumbnails").getAsJsonObject().get("default").getAsJsonObject().get("url").getAsString();
+                            videoIDs.add(videoID);
+                            videoTitles.add(title);
+                            previews.add(new ThumbnailItem(url, title));
+                            favoritesViewModel.setVideoTitles(videoTitles);
+                            favoritesViewModel.setVideoIDs(videoIDs);
+                            favoritesViewModel.setPreviews(previews);
+                        }
+                        catch (IndexOutOfBoundsException e){
+
+                        }
                     }
                 }
 
